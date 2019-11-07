@@ -1,35 +1,23 @@
 <template>
-  <div class="container">
-    <div>
-      <logo />
-      <h1 class="title">
-        taxi-park-landingpage
-      </h1>
-      <h2 class="subtitle">
-        Landing page website of a taxi park
-      </h2>
-      <div class="links">
-        <a href="https://nuxtjs.org/" target="_blank" class="button--green">
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
+  <div style="width:100%; position:relative">
+    <Header style="position: absolute; top:0;z-index:9999;" />
+    <div class="container">
+      <Main />
     </div>
+    <Footer />
   </div>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
+import Header from '~/components/Header.vue'
+import Main from '~/components/Main.vue'
+import Footer from '~/components/Footer.vue'
 
 export default {
   components: {
-    Logo
+    Header,
+    Main,
+    Footer
   }
 }
 </script>
@@ -37,7 +25,6 @@ export default {
 <style>
 .container {
   margin: 0 auto;
-  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
