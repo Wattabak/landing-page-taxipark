@@ -9,6 +9,15 @@
   font-family: Ubuntu;
   src: url(Ubuntu);
 } */
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:400,700&display=swap');
+/* @font-face {
+  font-family: 'Ubuntu';
+  src: url('/assets/fonts/Ubuntu/Ubuntu-Regular.ttf') format('ttf');
+} */
+* {
+  font-family: 'Roboto', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
+    'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+}
 html {
   font-family: 'Roboto', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
     'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
@@ -19,6 +28,7 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 *,

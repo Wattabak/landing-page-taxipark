@@ -1,6 +1,6 @@
 <template>
-  <div style="width:100%; position:relative">
-    <Header style="position: absolute; top:0;z-index:9999;" />
+  <div>
+    <Header />
     <div class="container">
       <Main />
     </div>

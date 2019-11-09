@@ -1,5 +1,5 @@
 <template>
-  <header style="display:fixed;background-color:#fff;width:100vw;">
+  <header>
     <div class="head-class">
       <img
         src="/logo_final_with_text.svg"
@@ -34,6 +34,12 @@
 </template>
 
 <style lang="scss">
+header {
+  position: fixed;
+  background-color: #fff;
+  width: 100%;
+  z-index: 999;
+}
 .head-class {
   padding: 15px 10px;
   display: flex;
