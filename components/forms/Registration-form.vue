@@ -72,9 +72,66 @@ form {
   background: #ffffff;
   border: 3px solid #2b6ff2;
   border-radius: 25px;
+  h2 {
+    font-family: Ubuntu;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 23px;
+    text-align: center;
+    margin-bottom: 15px;
+    /* dark bckgrd */
+    color: #172116;
+  }
+  span {
+    font-family: Ubuntu, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 8px;
+    line-height: 9px;
+    text-align: left;
+    max-width: 205px;
+    align-self: center;
+    margin: 10px 0;
+    span {
+      color: #fff500;
+      display: inline;
+    }
+    a {
+      display: inline;
+      color: #2daaf0;
+    }
+  }
   div {
     margin: 10px 0;
+    width: 100%;
     display: flex;
+    label {
+      font-family: Ubuntu;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 16px;
+      text-align: left;
+      span {
+        color: #2daaf0;
+      }
+      a {
+        color: #0500e2;
+      }
+    }
+    input {
+      padding: 10px 5px 5px 0;
+      background-color: transparent;
+      border: 0;
+      border-bottom: solid 2px #172116;
+      &::placeholder {
+        color: #172116;
+      }
+      // &::placeholder {
+      //   color:#fff;
+      // }
+    }
     &.checkbox {
       flex-direction: row;
     }
@@ -83,31 +140,6 @@ form {
     }
   }
 
-  h2 {
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 20px;
-    line-height: 23px;
-    text-align: center;
-
-    /* dark bckgrd */
-    color: #172116;
-  }
-  label {
-    font-family: Ubuntu;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 14px;
-    line-height: 16px;
-    text-align: left;
-    span {
-      color: #2daaf0;
-    }
-    a {
-      color: #0500e2;
-    }
-  }
   span {
     font-family: Roboto;
     font-style: normal;
@@ -137,6 +169,7 @@ form {
     text-align: center;
     padding: 5px;
     align-self: center;
+    min-width: 175px;
   }
 }
 </style>

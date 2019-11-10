@@ -1,40 +1,38 @@
 <template>
-  <div>
-    <form action="" method="post">
-      <div>
-        <label>
-          Ваше имя
-        </label>
+  <form action="" method="post">
+    <div>
+      <label>
+        Ваше имя
+      </label>
 
-        <input
-          id="name"
-          type="text"
-          name="phone"
-          placeholder="Иванов Иван"
-          required
-        />
-      </div>
-      <div>
-        <label>
-          Ваш номер телефона
-        </label>
-        <input
-          type="tel"
-          name="phone"
-          placeholder="+7 "
-          pattern="+[0-9]{1} ([0-9]{3}) [0-9]{3}-[0-9]{2}-[0-9]{2}"
-          required
-        />
-      </div>
-      <span>
-        Нажимая на кнопку <span>Заказать</span>, вы даете согласие на обработку
-        персональных данных и соглашаетесь c <a>Политикой конфиденциальности</a>
-      </span>
-      <button type="submit" class="yellow-callback">
-        Заказать обратный звонок
-      </button>
-    </form>
-  </div>
+      <input
+        id="name"
+        type="text"
+        name="phone"
+        placeholder="Иванов Иван"
+        required
+      />
+    </div>
+    <div>
+      <label>
+        Ваш номер телефона
+      </label>
+      <input
+        type="tel"
+        name="phone"
+        placeholder="+7 "
+        pattern="+[0-9]{1} ([0-9]{3}) [0-9]{3}-[0-9]{2}-[0-9]{2}"
+        required
+      />
+    </div>
+    <span>
+      Нажимая на кнопку <span>Заказать</span>, вы даете согласие на обработку
+      персональных данных и соглашаетесь c <a>Политикой конфиденциальности</a>
+    </span>
+    <button type="submit" class="yellow-callback">
+      Заказать обратный звонок
+    </button>
+  </form>
 </template>
 
 <style lang="scss" scoped>
@@ -80,7 +78,7 @@ form {
     // }
   }
   span {
-    font-family: Roboto;
+    font-family: Ubuntu, sans-serif;
     font-style: normal;
     font-weight: bold;
     font-size: 8px;
