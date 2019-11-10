@@ -3,13 +3,13 @@ const routerBase =
   process.env.DEPLOY_ENV === 'GH_PAGES'
     ? {
         router: {
-          base: '/<repository-name>/'
+          base: '/landing-page-taxipark/'
         }
       }
     : {}
 
 export default {
-  routerBase,
+  ...routerBase,
   mode: 'universal',
   /*
    ** Headers of the page
