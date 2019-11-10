@@ -18,7 +18,7 @@
             <span>Доход до 10 000 рублей в сутки</span>
           </div>
         </div>
-        <CallbackForm />
+        <CallbackForm class="overlay-form" />
       </div>
     </div>
     <div id="partners-bar">
@@ -115,7 +115,7 @@
       </h2>
       <div id="offer-2">
         <div>
-          <div>
+          <div class="driver-income">
             <img src="images/offers/taxi-driver-1.png" alt="Водитель" />
             <p>Зарабатывает до <span>5000</span> ₽/день</p>
           </div>
@@ -125,7 +125,7 @@
           </div>
         </div>
         <div>
-          <div>
+          <div class="driver-income">
             <img src="images/offers/taxi-driver-1.png" alt="Водитель" />
             <p>Зарабатывает до <span>4000</span> ₽/день</p>
           </div>
@@ -135,7 +135,7 @@
           </div>
         </div>
         <div>
-          <div>
+          <div class="driver-income">
             <img src="images/offers/taxi-driver-1.png" alt="Водитель" />
             <p>Зарабатывает до <span>7000</span> ₽/день</p>
           </div>
@@ -160,13 +160,16 @@
           начать зарабатывать за <span>5 минут!</span>
         </p>
       </div>
-      <CallbackForm />
+      <div>
+        <CallbackForm :style="Blue" />
+      </div>
     </div>
     <div id="drivers-reviews">
       <h1>Отзывы наших водителей</h1>
       <div class="reviews">
         <div class="review">
-          <img src="" alt="Фотография Водителя" />
+          <img src="images/driver-picture.png" alt="Фотография Водителя" />
+
           <h3>Алексей. В Таксопарке уже 2 года</h3>
           <p>
             Lorem ipsum dolor sit amet, Первый Таксопарк это очень круто,
@@ -180,8 +183,59 @@
     <div id="contact-us">
       <h1>Свяжитесь с нами</h1>
       <div>
-        <div></div>
-        <div></div>
+        <div>
+          <!-- This block holds everything contactwise, phones, e-mails, everything that only represents data -->
+          <div class="contact-data">
+            <div class="text-group">
+              <h2>Наш телефон</h2>
+              <div class="icon-text">
+                <img src="icons/phone-icon-white.svg" alt="icon" />
+                <span>+7 (977) 975-90-12</span>
+              </div>
+            </div>
+            <div class="text-group">
+              <h2>Наш e-mail</h2>
+              <div class="icon-text">
+                <img src="icons/email-icon-white.svg" alt="" />
+                <span>info@первыйтаксопарк.рф</span>
+              </div>
+            </div>
+          </div>
+          <!-- This block holds interactive contacts, i.e messengers -->
+          <div class="interactive-contacts text-group">
+            <h2>Мы в мессенджерах</h2>
+            <div class="text-group">
+              <img src="icons/whatsapp-button.svg" alt="Whatsapp" />
+              <img src="icons/telegram-button.svg" alt="Telegram" />
+              <img src="icons/messenger-button.svg" alt="Messenger" />
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="interactive-buttons">
+            <button class="yellow-callback">
+              <img src="/icons/checkers.svg" alt="" />
+              Заказать обратный звонок
+              <img src="/icons/checkers.svg" alt="" />
+            </button>
+            <button class="yellow-callback">
+              <img src="/icons/checkers.svg" alt="" />
+              Оформиться в такоспарке
+              <img src="/icons/checkers.svg" alt="" />
+            </button>
+          </div>
+          <div class="adresses text-group">
+            <h2>Города, в которых мы работаем:</h2>
+            <div class="icon-text">
+              <img src="icons/marker.svg" alt="" />
+              <span>Москва</span>
+            </div>
+            <div class="icon-text">
+              <img src="icons/marker.svg" alt="" />
+              <span>Санкт-Петербург</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </main>
@@ -195,18 +249,51 @@ export default {
   components: {
     CallbackForm,
     RegistrationForm
+  },
+  data() {
+    return {
+      Blue: {
+        backgroundColor: '#2B6FF2'
+      }
+    }
   }
 }
 </script>
 
 <style lang="scss" scoped>
+.yellow-callback {
+  background: #fff500;
+  width: 100%;
+  border: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 3px 0;
+  box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 20.0739px;
+  font-family: Ubuntu;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 10.1399px;
+  line-height: 12px;
+
+  text-align: center;
+  color: #172116;
+  margin-bottom: 5px;
+
+  img {
+    width: 9px;
+    height: 6px;
+  }
+}
 h1 {
   font-style: normal;
   font-weight: 300;
   font-size: 18px;
   line-height: 21px;
   text-align: center;
-  margin: 20px 15px;
+  padding: 20px 15px;
   font-family: Roboto, -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen,
     Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
@@ -223,6 +310,9 @@ main {
     justify-content: center;
     align-items: center;
     padding: 0 10px;
+  }
+  .overlay-form {
+    width: 75%;
   }
 }
 .overlay-first-picture {
@@ -248,7 +338,8 @@ main {
   display: flex;
 }
 .text-advantages {
-  padding: 25px;
+  align-self: flex-start;
+  padding: 10px;
   div {
     display: flex;
     align-items: center;
@@ -258,6 +349,8 @@ main {
       color: #fff;
       margin-left: 15px;
       font-size: 15.5px;
+      max-width: 150px;
+      text-align: left;
       span {
         margin: 0;
         font-family: inherit;
@@ -273,7 +366,7 @@ main {
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
-    padding: 15px;
+    padding: 10px;
     li {
       padding: 10px;
     }
@@ -361,10 +454,30 @@ main {
   }
   #offer-2 {
     position: relative;
+    padding: 15px;
+    & > div {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      justify-items: flex-end;
+    }
     & > img {
       position: absolute;
       bottom: 0;
       left: 0;
+    }
+    .driver-income {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: flex-end;
+      p {
+        max-width: 120px;
+        span {
+          color: #fcf206;
+        }
+      }
     }
   }
 }
@@ -374,7 +487,6 @@ main {
     &.promo {
       display: flex;
       flex-direction: row;
-      margin: 15px;
       align-items: center;
       img {
         margin-right: 15px;
@@ -392,14 +504,86 @@ main {
       color: #ed2e2e;
     }
   }
-  .blueform {
-    form {
-      background-color: #2b6ff2;
+}
+#drivers-reviews {
+  .review {
+    position: relative;
+    margin: 15px;
+    padding: 15px 29px;
+    background: #fbf8c3;
+    border-radius: 0px 0px 15px 15px;
+    img {
+      position: absolute;
+      top: -32px;
+      left: 0;
+    }
+    h3 {
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: 300;
+      font-size: 18px;
+      line-height: 21px;
+      text-align: left;
+      margin-left: 50px;
+      margin-bottom: 10px;
+    }
+    p {
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 16px;
+
+      text-align: justify;
     }
   }
 }
 #contact-us {
   background-color: #222e20;
   color: #fff;
+  h2 {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 11px;
+    line-height: 13px;
+    text-align: left;
+  }
+
+  & > div {
+    display: flex;
+    padding: 10px;
+    flex-direction: row;
+    justify-content: space-evenly;
+    .text-group {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-items: flex-start;
+      & > h2 {
+        margin-bottom: 5px;
+      }
+      & > img {
+        margin-bottom: 5px;
+      }
+    }
+    .icon-text {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+      margin-bottom: 5px;
+      img {
+        margin-right: 10px;
+      }
+      span {
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 10px;
+        line-height: 12px;
+      }
+    }
+  }
 }
 </style>

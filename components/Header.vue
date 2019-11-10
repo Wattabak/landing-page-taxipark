@@ -1,12 +1,9 @@
 <template>
   <header>
     <div class="head-class">
-      <img
-        src="logo_final_with_text.svg"
-        alt="Логотип"
-        class="main-logo"
-        srcset=""
-      />
+      <a href="/" class="main-logo">
+        <img src="logo_final_with_text.png" alt="Логотип" srcset="" />
+      </a>
       <div class="contact-data">
         <div class="phone-text">
           <img src="icons/phone-icon.svg" alt="phone-icon" />
@@ -54,7 +51,9 @@ header {
 }
 
 .main-logo {
-  height: 90%;
+  img {
+    width: 136px;
+  }
 }
 
 .contact-data {
