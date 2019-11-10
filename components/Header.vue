@@ -2,26 +2,26 @@
   <header>
     <div class="head-class">
       <img
-        src="/logo_final_with_text.svg"
+        src="logo_final_with_text.svg"
         alt="Логотип"
         class="main-logo"
         srcset=""
       />
       <div class="contact-data">
         <div class="phone-text">
-          <img src="/icons/phone-icon.svg" alt="phone-icon" />
+          <img src="icons/phone-icon.svg" alt="phone-icon" />
           <span>+7 (977) 975-90-12</span>
         </div>
         <div class="chat-with-us-block">
           <div style="margin-right:10px">
             <a>
-              <img src="/icons/whatsapp.svg" alt="Whatsapp logo" />
+              <img src="icons/whatsapp.svg" alt="Whatsapp logo" />
             </a>
             <a>
-              <img src="/icons/telegram.svg" alt="Telegram logo" />
+              <img src="icons/telegram.svg" alt="Telegram logo" />
             </a>
             <a>
-              <img src="/icons/messenger.svg" alt="Mesenger logo" />
+              <img src="icons/messenger.svg" alt="Mesenger logo" />
             </a>
           </div>
           <span style="text-decoration:underline;font-weight:400;">
