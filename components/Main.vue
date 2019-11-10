@@ -163,7 +163,7 @@
           начать зарабатывать за <span>5 минут!</span>
         </p>
       </div>
-      <CallbackForm class="blueform" />
+      <CallbackForm />
     </div>
     <div id="drivers-reviews">
       <h1>Отзывы наших водителей</h1>
