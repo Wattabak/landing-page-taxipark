@@ -17,6 +17,7 @@ div.container {
 }
 ul {
   width: 100%;
+  padding-left: 0;
   list-style-type: none;
   display: flex;
   flex-direction: row;
