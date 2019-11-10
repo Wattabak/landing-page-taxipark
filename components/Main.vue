@@ -6,15 +6,15 @@
       <div class="content-in-overlay">
         <div class="text-advantages">
           <div>
-            <img src="/icons/five-icon.svg" alt="icon" />
+            <img src="icons/five-icon.svg" alt="icon" />
             <span>Регистрация за <span>5 минут</span></span>
           </div>
           <div>
-            <img src="/icons/quick-money-icon.svg" alt="icon" />
+            <img src="icons/quick-money-icon.svg" alt="icon" />
             <span>Мгновенные выплаты</span>
           </div>
           <div>
-            <img src="/icons/time-is-money.svg" alt="icon" />
+            <img src="icons/time-is-money.svg" alt="icon" />
             <span>Доход до 10 000 рублей в сутки</span>
           </div>
         </div>
@@ -25,17 +25,17 @@
       <h1>Подключим Вас к крупнейшим агрегаторам</h1>
       <ul>
         <li>
-          <img src="/images/partners/yandex-taxi.png" alt="Яндекс.Такси" />
+          <img src="images/partners/yandex-taxi.png" alt="Яндекс.Такси" />
         </li>
-        <li><img src="/images/partners/citimobil.png" alt="GetT" /></li>
-        <li><img src="/images/partners/gett.png" alt="СитиМобил" /></li>
-        <li><img src="/images/partners/bolt.png" alt="Bolt" /></li>
+        <li><img src="images/partners/citimobil.png" alt="GetT" /></li>
+        <li><img src="images/partners/gett.png" alt="СитиМобил" /></li>
+        <li><img src="images/partners/bolt.png" alt="Bolt" /></li>
       </ul>
     </div>
     <div id="promos">
       <div>
         <div>
-          <img src="/icons/yandex-gasstation.png" alt="" />
+          <img src="icons/yandex-gasstation.png" alt="" />
           <h2>Используйте Яндекс.Заправки</h2>
         </div>
         <p>
@@ -45,14 +45,14 @@
       </div>
       <div>
         <div>
-          <img src="/icons/moscow_icon.svg" alt="" />
+          <img src="icons/moscow_icon.svg" alt="" />
           <h2>Работаем в крупнейших городах России</h2>
         </div>
         <p>Первый Таксопарк работает на территории Москвы и Санкт-Петербурга</p>
       </div>
       <div>
         <div>
-          <img src="/icons/five-years.svg" alt="" />
+          <img src="icons/five-years.svg" alt="" />
           <h2>Таксопарк работает уже 5 лет</h2>
         </div>
         <p>
@@ -62,7 +62,7 @@
       </div>
       <div>
         <div>
-          <img src="/icons/momentary-payouts.svg" alt="" />
+          <img src="icons/momentary-payouts.svg" alt="" />
           <h2>Выводите средства мгновенно</h2>
         </div>
         <p>Деньги со счета можно выводить мгновенно без лишних вопросов</p>
@@ -77,38 +77,35 @@
       <h2>Сдайте ваш автомобиль в аренду и получайте пассивный заработок</h2>
       <div id="offer-1">
         <div class="offer-wrapper">
-          <img src="/images/offers/1.svg" alt="Первый шаг" />
+          <img src="images/offers/1.svg" alt="Первый шаг" />
           <div>
             <p>
               Простаивает хороший автомобиль? Ищете источник пассивного
               заработка?
             </p>
-            <img
-              src="/images/offers/hyundai-solaris.png"
-              alt="Ваш автомобиль"
-            />
+            <img src="images/offers/hyundai-solaris.png" alt="Ваш автомобиль" />
           </div>
         </div>
         <div class="offer-wrapper">
-          <img src="/images/offers/2.svg" alt="Второй шаг" />
+          <img src="images/offers/2.svg" alt="Второй шаг" />
           <div>
             <p>
               Сдайте ваш автомобиль в аренду в Первый Таксопарк, мы подберем
               водителя.
             </p>
             <img
-              src="/images/offers/solaris_taxi.png"
+              src="images/offers/solaris_taxi.png"
               alt="Ваш автомобиль такси"
             />
           </div>
         </div>
         <div class="offer-wrapper">
-          <img src="/images/offers/3.svg" alt="Третий шаг" />
+          <img src="images/offers/3.svg" alt="Третий шаг" />
           <div>
             <p>
               Получайте деньги с аренды автомобиля каждый месяц
             </p>
-            <img src="/images/offers/cash-money.png" alt="Деньги" />
+            <img src="images/offers/cash-money.png" alt="Деньги" />
           </div>
         </div>
       </div>
@@ -119,7 +116,7 @@
       <div id="offer-2">
         <div>
           <div>
-            <img src="/images/offers/taxi-driver-1.png" alt="Водитель" />
+            <img src="images/offers/taxi-driver-1.png" alt="Водитель" />
             <p>Зарабатывает до <span>5000</span> ₽/день</p>
           </div>
           <div>
@@ -129,7 +126,7 @@
         </div>
         <div>
           <div>
-            <img src="/images/offers/taxi-driver-1.png" alt="Водитель" />
+            <img src="images/offers/taxi-driver-1.png" alt="Водитель" />
             <p>Зарабатывает до <span>4000</span> ₽/день</p>
           </div>
           <div>
@@ -139,7 +136,7 @@
         </div>
         <div>
           <div>
-            <img src="/images/offers/taxi-driver-1.png" alt="Водитель" />
+            <img src="images/offers/taxi-driver-1.png" alt="Водитель" />
             <p>Зарабатывает до <span>7000</span> ₽/день</p>
           </div>
           <div>
@@ -148,7 +145,7 @@
           </div>
         </div>
         <img
-          src="/images/offers/man-showing-amount.png"
+          src="images/offers/man-showing-amount.png"
           alt="Сколько можно заработать"
         />
       </div>
@@ -156,7 +153,7 @@
     <div id="callback-form">
       <h1>Закажите обратный звонок!</h1>
       <div class="promo">
-        <img src="/images/consultant-icon.png" alt="" />
+        <img src="images/consultant-icon.png" alt="" />
         <p>
           Получите <span>бесплатную</span> консультацию от менеджера Первого
           Таксопарка. Наши сотрудники помогут оформить необходимые документы и
