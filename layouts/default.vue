@@ -3,7 +3,19 @@
     <nuxt />
   </div>
 </template>
-
+<script>
+export default {
+  head: {
+    link: [
+      {
+        rel: 'stylesheet',
+        href:
+          'https://fonts.googleapis.com/css?family=Ubuntu:400,700&display=swap'
+      }
+    ]
+  }
+}
+</script>
 <style>
 /* @font-face {
   font-family: Ubuntu;
@@ -13,6 +25,12 @@
 /* @font-face {
   font-family: 'Ubuntu';
   src: url('/assets/fonts/Ubuntu/Ubuntu-Regular.ttf') format('ttf');
+} */
+/* @font-face {
+ font-family: 'Ubuntu';
+ src: url('./fonts/Ubuntu-Bold.ttf');
+ font-weight: bold;
+ font-style: normal;
 } */
 * {
   font-family: 'Roboto', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,

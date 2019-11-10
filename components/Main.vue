@@ -323,7 +323,7 @@ main {
   width: 100%;
 }
 .first-picture-background-image {
-  background-image: url('images/taxi-driver-background-blur.jpg');
+  background-image: url('/images/taxi-driver-background-blur.jpg');
   background-size: cover;
   width: 100%;
   height: 100%;
