@@ -1,40 +1,115 @@
 <template>
-  <form action="" method="post">
+  <form method="POST" @submit.prevent="onSubmit">
     <div>
       <label>
         Ваше имя
       </label>
-
       <input
         id="name"
+        v-model.trim="$v.formData.name.$model"
         type="text"
-        name="phone"
+        name="name"
         placeholder="Иванов Иван"
         required
       />
+      <span v-if="!$v.formData.name.required" class="error">
+        Пожалуйста, введите ваше Имя!
+      </span>
+      <span v-if="!$v.formData.name.minLength" class="error">
+        Имя должно содержать до
+        {{ $v.formData.name.$params.minLength.min }} знаков.
+      </span>
     </div>
     <div>
       <label>
         Ваш номер телефона
       </label>
       <input
+        v-model.trim="$v.formData.phone.$model"
         type="tel"
         name="phone"
         placeholder="+7 "
         pattern="+[0-9]{1} ([0-9]{3}) [0-9]{3}-[0-9]{2}-[0-9]{2}"
         required
       />
+      <span v-if="!$v.formData.phone.required" class="error">
+        Пожалуйста, введите ваш номер телефона!
+      </span>
+      <span v-if="!$v.formData.phone.minLength" class="error">
+        Номер телефона не может содержать меньше
+        {{ $v.formData.name.$params.minLength.min }} знаков.
+      </span>
     </div>
     <span>
       Нажимая на кнопку <span>Заказать</span>, вы даете согласие на обработку
       персональных данных и соглашаетесь c <a>Политикой конфиденциальности</a>
     </span>
-    <button type="submit" class="yellow-callback">
-      Заказать обратный звонок
+    <transition name="fade">
+      <div v-if="status == 'success'" class="success">
+        <img src="icons/checkmark.svg" alt="Успех" />
+        <h3>Заявка успешно отправлена!</h3>
+        <span>Первый таксопарк свяжется с Вами в ближайшее время!</span>
+      </div>
+    </transition>
+    <button
+      type="submit"
+      class="yellow-callback"
+      :disabled="status === 'PENDING'"
+    >
+      {{ buttonText }}
     </button>
   </form>
 </template>
+<script>
+import axios from 'axios'
+import { required, maxLength } from 'vuelidate/lib/validators'
+import minLength from 'vuelidate/lib/validators/minLength'
 
+export default {
+  props: {
+    buttonText: {
+      type: String,
+      default: 'Заказать обратный звонок'
+    }
+  },
+  // Assign a unique id to each component
+  data: () => ({
+    formData: {
+      name: '',
+      phone: ''
+    },
+    status: ''
+  }),
+  validations: {
+    formData: {
+      name: {
+        required,
+        maxLength: maxLength(50),
+        minLength: minLength(5)
+      },
+      phone: {
+        required,
+        maxLength: maxLength(20),
+        minLength: minLength(7)
+      }
+    }
+  },
+  methods: {
+    onSubmit() {
+      this.$v.$touch()
+      if (this.$v.$invalid) {
+        this.submitStatus = 'error'
+      } else {
+        // do your submit logic here
+        axios
+          .post('api/form-submission', this.formData)
+          .then((this.status = 'success'))
+          .catch()
+      }
+    }
+  }
+}
+</script>
 <style lang="scss" scoped>
 form {
   display: flex;
@@ -46,6 +121,15 @@ form {
   border-radius: 12px;
   padding: 15px 15px 45px 15px;
   position: relative;
+  cursor: text;
+
+  .fade-enter-active,
+  .fade-leave-active {
+    transition: opacity 0.5s;
+  }
+  .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    opacity: 0;
+  }
 
   * {
     display: block;
@@ -57,6 +141,7 @@ form {
   }
   label {
     font-family: Ubuntu;
+    cursor: text;
     font-style: normal;
     font-weight: bold;
     font-size: 14px;
@@ -93,32 +178,34 @@ form {
       color: #2daaf0;
     }
   }
+  .error {
+    color: #ed2e2e;
+    font-size: 9px;
+  }
+  .success {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgb(28, 199, 0);
+    justify-content: center;
+    img {
+      width: 64px;
+    }
+  }
 }
 .yellow-callback {
-  background: #fff500;
-  width: 100%;
   left: 0px;
-  border: none;
   padding: 5px 0;
-  box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.25);
-  border-radius: 20.0739px;
-  font-family: 'Ubuntu';
-  font-style: normal;
   bottom: -1px;
-  font-weight: bold;
   font-size: 14px;
   line-height: 16px;
   position: absolute;
-  text-align: center;
-  color: #172116;
   margin-bottom: 0px;
-  &::before {
-    content: url('/icons/checkers.svg');
-    left: 15px;
-  }
-  &::after {
-    content: url('/icons/checkers.svg');
-    right: 15px;
-  }
 }
 </style>

@@ -18,21 +18,69 @@
             <span>Доход до 10 000 рублей в сутки</span>
           </div>
         </div>
-        <CallbackForm class="overlay-form" />
+        <CallbackForm
+          button-text="Заказать обратный звонок"
+          class="overlay-form"
+        />
       </div>
     </div>
     <div id="partners-bar">
       <h1>Подключим Вас к крупнейшим агрегаторам</h1>
       <ul>
-        <li>
-          <img src="images/partners/yandex-taxi.png" alt="Яндекс.Такси" />
-        </li>
-        <li><img src="images/partners/citimobil.png" alt="GetT" /></li>
-        <li><img src="images/partners/gett.png" alt="СитиМобил" /></li>
-        <li><img src="images/partners/bolt.png" alt="Bolt" /></li>
+        <div>
+          <li>
+            <img src="images/partners/yandex-taxi.png" alt="Яндекс.Такси" />
+          </li>
+          <li><img src="images/partners/citimobil.png" alt="СитиМобил" /></li>
+        </div>
+        <div>
+          <li><img src="images/partners/gett.png" alt="GetT" /></li>
+          <li><img src="images/partners/bolt.png" alt="Bolt" /></li>
+        </div>
       </ul>
     </div>
     <div id="promos">
+      <div>
+        <div>
+          <img src="icons/five-years.svg" alt="" />
+          <h2>Зарабатывайте до 10 000 ₽/день</h2>
+        </div>
+        <p>
+          Первый таксопарк устанавливает лояльные проценты выплат, что позволит
+          вам зарабатывать до 10 000 рубелй в день.
+        </p>
+      </div>
+      <div>
+        <div>
+          <img src="icons/five-years.svg" alt="" />
+          <h2>Работаем с крупнейшими агрегаторами</h2>
+        </div>
+        <p>
+          Мы сотрудничаем с Яндекс.Такси, Bolt, СитиМобил и GetT. Мы сможем
+          подключить Вас к любой из вышеперечисленных систем в считанные минуты.
+        </p>
+      </div>
+      <div>
+        <div>
+          <img src="icons/five-years.svg" alt="" />
+          <h2>Множество акций и специальных предложений</h2>
+        </div>
+        <p>
+          В Первом Таксопарке предоставит Вам лучшие предложения заработка.
+          Ознакомиться с несколькими из наших специальных предложений Вы можете
+          ниже.
+        </p>
+      </div>
+      <div>
+        <div>
+          <img src="icons/momentary-payouts.svg" alt="" />
+          <h2>Выводите средства мгновенно</h2>
+        </div>
+        <p>
+          Деньги со счета можно выводить самостоятельно, мгновенно и на любые
+          карты.
+        </p>
+      </div>
       <div>
         <div>
           <img src="icons/yandex-gasstation.png" alt="" />
@@ -50,27 +98,12 @@
         </div>
         <p>Первый Таксопарк работает на территории Москвы и Санкт-Петербурга</p>
       </div>
-      <div>
-        <div>
-          <img src="icons/five-years.svg" alt="" />
-          <h2>Таксопарк работает уже 5 лет</h2>
-        </div>
-        <p>
-          Первый Таксопарк находится на рынке уже более 5 лет, с нами работают
-          столько то человек. Выплачено около стольких то денег...
-        </p>
-      </div>
-      <div>
-        <div>
-          <img src="icons/momentary-payouts.svg" alt="" />
-          <h2>Выводите средства мгновенно</h2>
-        </div>
-        <p>Деньги со счета можно выводить мгновенно без лишних вопросов</p>
-      </div>
     </div>
     <div id="registration-form">
       <h1>Зарегистрируйтесь в Первом Таксопарке, заполнив форму ниже</h1>
-      <RegistrationForm />
+      <div>
+        <RegistrationForm />
+      </div>
     </div>
     <div id="special-offers">
       <h1>Специальные предложения</h1>
@@ -103,7 +136,7 @@
           <img src="images/offers/3.svg" alt="Третий шаг" />
           <div>
             <p>
-              Получайте деньги с аренды автомобиля каждый месяц
+              Получайте деньги от аренды вашего автомобиля регулярно.
             </p>
             <img src="images/offers/cash-money.png" alt="Деньги" />
           </div>
@@ -152,16 +185,19 @@
     </div>
     <div id="callback-form">
       <h1>Закажите обратный звонок!</h1>
-      <div class="promo">
-        <img src="images/consultant-icon.png" alt="" />
-        <p>
-          Получите <span>бесплатную</span> консультацию от менеджера Первого
-          Таксопарка. Наши сотрудники помогут оформить необходимые документы и
-          начать зарабатывать за <span>5 минут!</span>
-        </p>
-      </div>
       <div>
-        <CallbackForm :style="Blue" />
+        <div class="promo">
+          <img src="images/consultant-icon.png" alt="" />
+          <p>
+            Получите <span>бесплатную</span> консультацию от менеджера Первого
+            Таксопарка. Наши сотрудники помогут оформить необходимые документы и
+            начать зарабатывать за <span>5 минут!</span>
+          </p>
+        </div>
+
+        <div>
+          <CallbackForm button-text="Заказать обратный звонок" :style="Blue" />
+        </div>
       </div>
     </div>
     <div id="drivers-reviews">
@@ -178,63 +214,27 @@
             очень круто, быстрые выплаты,
           </p>
         </div>
-      </div>
-    </div>
-    <div id="contact-us">
-      <h1>Свяжитесь с нами</h1>
-      <div>
-        <div>
-          <!-- This block holds everything contactwise, phones, e-mails, everything that only represents data -->
-          <div class="contact-data">
-            <div class="text-group">
-              <h2>Наш телефон</h2>
-              <div class="icon-text">
-                <img src="icons/phone-icon-white.svg" alt="icon" />
-                <span>+7 (977) 975-90-12</span>
-              </div>
-            </div>
-            <div class="text-group">
-              <h2>Наш e-mail</h2>
-              <div class="icon-text">
-                <img src="icons/email-icon-white.svg" alt="" />
-                <span>info@первыйтаксопарк.рф</span>
-              </div>
-            </div>
-          </div>
-          <!-- This block holds interactive contacts, i.e messengers -->
-          <div class="interactive-contacts text-group">
-            <h2>Мы в мессенджерах</h2>
-            <div class="text-group">
-              <img src="icons/whatsapp-button.svg" alt="Whatsapp" />
-              <img src="icons/telegram-button.svg" alt="Telegram" />
-              <img src="icons/messenger-button.svg" alt="Messenger" />
-            </div>
-          </div>
+        <div class="review">
+          <img src="images/driver-picture.png" alt="Фотография Водителя" />
+
+          <h3>Алексей. В Таксопарке уже 2 года</h3>
+          <p>
+            Lorem ipsum dolor sit amet, Первый Таксопарк это очень круто,
+            быстрые выплаты, зарегистрировался за 2 минуты онлайн, работаю уже 2
+            года очень советую. Lorem ipsum dolor sit amet, Первый Таксопарк это
+            очень круто, быстрые выплаты,
+          </p>
         </div>
-        <div>
-          <div class="interactive-buttons">
-            <button class="yellow-callback">
-              <img src="/icons/checkers.svg" alt="" />
-              Заказать обратный звонок
-              <img src="/icons/checkers.svg" alt="" />
-            </button>
-            <button class="yellow-callback">
-              <img src="/icons/checkers.svg" alt="" />
-              Оформиться в такоспарке
-              <img src="/icons/checkers.svg" alt="" />
-            </button>
-          </div>
-          <div class="adresses text-group">
-            <h2>Города, в которых мы работаем:</h2>
-            <div class="icon-text">
-              <img src="icons/marker.svg" alt="" />
-              <span>Москва</span>
-            </div>
-            <div class="icon-text">
-              <img src="icons/marker.svg" alt="" />
-              <span>Санкт-Петербург</span>
-            </div>
-          </div>
+        <div class="review">
+          <img src="images/driver-picture.png" alt="Фотография Водителя" />
+
+          <h3>Алексей. В Таксопарке уже 2 года</h3>
+          <p>
+            Lorem ipsum dolor sit amet, Первый Таксопарк это очень круто,
+            быстрые выплаты, зарегистрировался за 2 минуты онлайн, работаю уже 2
+            года очень советую. Lorem ipsum dolor sit amet, Первый Таксопарк это
+            очень круто, быстрые выплаты,
+          </p>
         </div>
       </div>
     </div>
@@ -261,104 +261,67 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.yellow-callback {
-  background: #fff500;
-  width: 100%;
-  border: none;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-evenly;
-  padding: 3px 0;
-  box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.25);
-  border-radius: 20.0739px;
-  font-family: Ubuntu;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 10.1399px;
-  line-height: 12px;
-
-  text-align: center;
-  color: #172116;
-  margin-bottom: 5px;
-
-  img {
-    width: 9px;
-    height: 6px;
-  }
-}
-h1 {
-  font-style: normal;
-  font-weight: 300;
-  font-size: 18px;
-  line-height: 21px;
-  text-align: center;
-  padding: 20px 15px;
-  font-family: Roboto, -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen,
-    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
-
 main {
   width: 100%;
 }
 #initial-screen {
   position: relative;
   height: 100vh;
+  .overlay-first-picture {
+    background: rgba(37, 154, 154, 0.72);
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+  }
+  .first-picture-background-image {
+    background-image: url('/images/taxi-driver-background-blur.jpg');
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+  }
   .content-in-overlay {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 0 10px;
-  }
-  .overlay-form {
-    width: 75%;
-  }
-}
-.overlay-first-picture {
-  background: rgba(37, 154, 154, 0.72);
-  position: absolute;
-  top: 0;
-  height: 100%;
-  width: 100%;
-}
-.first-picture-background-image {
-  background-image: url('/images/taxi-driver-background-blur.jpg');
-  background-size: cover;
-  width: 100%;
-  height: 100%;
-}
-.content-in-overlay {
-  width: 100vw;
-  height: 100%;
-  justify-content: left;
-  align-items: center;
-  position: absolute;
-  top: 0;
-  display: flex;
-}
-.text-advantages {
-  align-self: flex-start;
-  padding: 10px;
-  div {
-    display: flex;
-    align-items: center;
+    padding: 10px;
+    margin-top: 12vh;
+    width: 100vw;
+    height: 100%;
     justify-content: left;
-    margin: 0 0 15px 0;
-    span {
-      color: #fff;
-      margin-left: 15px;
-      font-size: 15.5px;
-      max-width: 150px;
-      text-align: left;
-      span {
-        margin: 0;
-        font-family: inherit;
-        color: #fff500;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    .text-advantages {
+      align-self: flex-start;
+      padding: 10px;
+      div {
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        margin: 0 0 15px 0;
+        span {
+          color: #fff;
+          margin-left: 15px;
+          font-size: 15.5px;
+          max-width: 150px;
+          text-align: left;
+          span {
+            margin: 0;
+            font-family: inherit;
+            color: #fff500;
+          }
+        }
       }
     }
   }
+  .overlay-form {
+    width: 75%;
+    max-width: 360px;
+  }
 }
+
 #partners-bar {
   ul {
     list-style-type: none;
@@ -367,6 +330,10 @@ main {
     justify-content: center;
     flex-wrap: wrap;
     padding: 10px;
+    div {
+      display: flex;
+      flex-direction: row;
+    }
     li {
       padding: 10px;
     }
@@ -375,9 +342,9 @@ main {
 #promos {
   background-color: #fcf206;
   padding: 15px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
   div {
     padding: 5px;
     display: flex;
@@ -416,6 +383,14 @@ main {
   }
 }
 
+#registration-form {
+  margin-bottom: 20px;
+  div {
+    width: 100%;
+    max-width: 468px;
+    margin: 0 auto;
+  }
+}
 #special-offers {
   background-color: #ed2e2e;
   color: #fff;
@@ -426,24 +401,30 @@ main {
     font-size: 16px;
     line-height: 18px;
     text-align: center;
+    padding: 0 15px;
   }
   #offer-1 {
+    justify-items: center;
+    display: grid;
+    grid-gap: 15px;
+    margin: 15px;
     .offer-wrapper {
       display: flex;
       flex-direction: row;
       align-items: flex-start;
-      padding: 15px;
       div {
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding: 10px;
+        padding: 0 10px;
         p {
+          max-width: 295px;
           text-align: left;
           font-family: Ubuntu;
           font-style: normal;
           font-weight: normal;
           font-size: 14px;
+          margin-bottom: 10px;
           line-height: 16px;
           color: #fff;
         }
@@ -455,6 +436,7 @@ main {
   #offer-2 {
     position: relative;
     padding: 15px;
+
     & > div {
       display: flex;
       flex-direction: column;
@@ -464,7 +446,7 @@ main {
     & > img {
       position: absolute;
       bottom: 0;
-      left: 0;
+      left: -30px;
     }
     .driver-income {
       display: flex;
@@ -483,14 +465,17 @@ main {
 }
 #callback-form {
   div {
+    display: flex;
+    flex-direction: column;
     padding: 15px;
-    &.promo {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      img {
-        margin-right: 15px;
-      }
+    justify-content: center;
+  }
+  div.promo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    img {
+      margin-right: 15px;
     }
   }
   p {
@@ -500,18 +485,30 @@ main {
     font-size: 14px;
     line-height: 16px;
     text-align: left;
+    max-width: 460px;
     span {
       color: #ed2e2e;
     }
   }
 }
 #drivers-reviews {
+  .reviews {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+
+    .review {
+      flex: 0 0 auto;
+    }
+  }
   .review {
     position: relative;
     margin: 15px;
+    margin-top: 50px;
     padding: 15px 29px;
     background: #fbf8c3;
     border-radius: 0px 0px 15px 15px;
+    max-width: 450px;
     img {
       position: absolute;
       top: -32px;
@@ -538,51 +535,65 @@ main {
     }
   }
 }
-#contact-us {
-  background-color: #222e20;
-  color: #fff;
-  h2 {
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 11px;
-    line-height: 13px;
-    text-align: left;
-  }
 
-  & > div {
-    display: flex;
-    padding: 10px;
-    flex-direction: row;
-    justify-content: space-evenly;
-    .text-group {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      justify-items: flex-start;
-      & > h2 {
-        margin-bottom: 5px;
-      }
-      & > img {
-        margin-bottom: 5px;
+@media (min-width: 468px) {
+  #initial-screen {
+    .content-in-overlay {
+      flex-direction: row;
+      justify-content: center;
+      .text-advantages {
+        align-self: center;
       }
     }
-    .icon-text {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: flex-start;
-      margin-bottom: 5px;
-      img {
-        margin-right: 10px;
+  }
+  #registration-form {
+    div {
+      width: 75%;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  #promos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  #offer-2 {
+    width: 75%;
+    margin: 0 auto;
+    & > img {
+      left: 0 !important;
+    }
+  }
+  #callback-form > div {
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 1024px) {
+  #initial-screen {
+    div.text-advantages {
+      div {
+        img {
+          width: 64px;
+        }
+        span {
+          font-size: 18px !important;
+        }
       }
-      span {
-        font-family: Roboto;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 10px;
-        line-height: 12px;
-      }
+    }
+  }
+  #promos,
+  #offer-1 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  #offer-2 {
+    width: 50%;
+  }
+}
+@media (min-width: 1440px) {
+  #drivers-reviews {
+    .reviews {
+      justify-content: center;
     }
   }
 }

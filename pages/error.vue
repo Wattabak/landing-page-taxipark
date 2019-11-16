@@ -1,32 +1,42 @@
 <template>
-  <div>
-    <Header />
+  <div class="container">
     <div class="error">
+      <span>404</span>
       <h1>Что-то пошло не так. Сайт недоступен</h1>
     </div>
-    <Footer />
   </div>
 </template>
 
 <script>
-import Header from '~/components/Header.vue'
-import Footer from '~/components/Footer.vue'
-
 export default {
-  components: {
-    Header,
-    Footer
-  }
+  components: {}
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+.container {
+  display: flex;
+  background-color: grey;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  span {
+    font-size: 54px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+      Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+}
 .error {
-  padding-top: 100px;
+  margin-top: 12vh;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   margin: 0 auto;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  align-content: center;
   text-align: center;
 }
 </style>

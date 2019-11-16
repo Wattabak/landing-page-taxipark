@@ -38,13 +38,19 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: [{ src: '~/plugins/Vuelidate' }, { src: '~/plugins/directives' }],
   /*
    ** Nuxt.js dev-modules
    */
   buildModules: [
     // Doc: https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module'
+  ],
+  serverMiddleware: [
+    {
+      path: '/api',
+      handler: '~/api/index.js'
+    }
   ],
   /*
    ** Nuxt.js modules
