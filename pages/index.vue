@@ -1,23 +1,35 @@
 <template>
   <div>
-    <Header />
     <div class="container">
       <Main />
     </div>
-    <Footer />
   </div>
 </template>
 
 <script>
-import Header from '~/components/Header.vue'
 import Main from '~/components/Main.vue'
-import Footer from '~/components/Footer.vue'
 
 export default {
+  head() {
+    return {
+      title: 'Первый таксопарк',
+      meta: [
+        {
+          name: 'keywords',
+          content:
+            'Таксопарк, Первый Таксопарк, работа таксист, таксист, такси,'
+        },
+        {
+          hid: 'description',
+          name: 'description',
+          content:
+            'Устраивайтесь работать в Первый Таксопарк! Заработок до 10 000 рублей, мгновенные выплаты, специальные предложения и многое другое.'
+        }
+      ]
+    }
+  },
   components: {
-    Header,
-    Main,
-    Footer
+    Main
   }
 }
 </script>

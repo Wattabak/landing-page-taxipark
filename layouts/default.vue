@@ -1,9 +1,14 @@
 <template>
   <div>
+    <Header />
     <nuxt />
+    <Footer />
   </div>
 </template>
 <script>
+import Header from '~/components/Header.vue'
+import Footer from '~/components/Footer.vue'
+
 export default {
   head: {
     link: [
@@ -13,10 +18,14 @@ export default {
           'https://fonts.googleapis.com/css?family=Ubuntu:400,700&display=swap'
       }
     ]
+  },
+  components: {
+    Header,
+    Footer
   }
 }
 </script>
-<style>
+<style lang="scss">
 /* @font-face {
   font-family: Ubuntu;
   src: url(Ubuntu);
@@ -32,10 +41,12 @@ export default {
  font-weight: bold;
  font-style: normal;
 } */
+
 * {
   font-family: 'Roboto', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
     'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
 }
+
 html {
   font-family: 'Roboto', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
     'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
@@ -56,32 +67,39 @@ html {
   margin: 0;
 }
 
-.button--green {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
-  text-decoration: none;
-  padding: 10px 30px;
+h1 {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+  padding: 20px 15px;
 }
 
-.button--green:hover {
-  color: #fff;
-  background-color: #3b8070;
-}
+.yellow-callback {
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  background: #fff500;
+  width: 100%;
+  border: none;
+  padding: 3px 0;
+  box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 20.0739px;
+  font-family: Ubuntu;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 10.1399px;
+  line-height: 12px;
+  text-align: center;
+  color: #172116;
+  margin-bottom: 5px;
 
-.button--grey {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #35495e;
-  color: #35495e;
-  text-decoration: none;
-  padding: 10px 30px;
-  margin-left: 15px;
-}
-
-.button--grey:hover {
-  color: #fff;
-  background-color: #35495e;
+  img {
+    width: 9px;
+    height: 6px;
+  }
 }
 </style>
