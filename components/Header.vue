@@ -22,14 +22,14 @@
         </div>
         <div class="chat-with-us-block">
           <div style="margin-right:10px">
-            <a href="https://wa.me/89779759012>" target="_blank">
+            <a href="https://wa.me/89779759012" target="_blank">
               <img src="icons/whatsapp.svg" alt="Whatsapp logo" />
             </a>
             <a href="tg://resolve?domain=<USERNAME>" target="_blank">
               <img src="icons/telegram.svg" alt="Telegram logo" />
             </a>
             <a href="http://m.me/USERNAME" target="_blank">
-              <img src="icons/messenger.svg" alt="Mesenger logo" />
+              <img src="icons/messenger.svg" alt="Messenger logo" />
             </a>
           </div>
           <span style="text-decoration:underline;font-weight:400;">

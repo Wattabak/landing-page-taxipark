@@ -25,7 +25,7 @@
           <div class="interactive-contacts text-group">
             <h2>Мы в мессенджерах</h2>
             <div class="text-group">
-              <a href="https://wa.me/89779759012>" target="_blank">
+              <a href="https://wa.me/89779759012" target="_blank">
                 <img src="icons/whatsapp-button.svg" alt="Whatsapp" />
               </a>
               <img src="icons/telegram-button.svg" alt="Telegram" />
