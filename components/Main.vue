@@ -42,7 +42,7 @@
     <div id="promos">
       <div>
         <div>
-          <img src="icons/five-years.svg" alt="" />
+          <img src="icons/ruble.svg" alt="" />
           <h2>Зарабатывайте до 10 000 ₽/день</h2>
         </div>
         <p>
@@ -52,7 +52,7 @@
       </div>
       <div>
         <div>
-          <img src="icons/five-years.svg" alt="" />
+          <img src="icons/taxi-icon.svg" alt="" />
           <h2>Работаем с крупнейшими агрегаторами</h2>
         </div>
         <p>
@@ -62,7 +62,7 @@
       </div>
       <div>
         <div>
-          <img src="icons/five-years.svg" alt="" />
+          <img src="icons/percent.svg" alt="" />
           <h2>Множество акций и специальных предложений</h2>
         </div>
         <p>
@@ -116,7 +116,15 @@
               Простаивает хороший автомобиль? Ищете источник пассивного
               заработка?
             </p>
-            <img src="images/offers/hyundai-solaris.png" alt="Ваш автомобиль" />
+            <img
+              src="images/offers/hyundai-solaris.png"
+              srcset="
+                images/offers/hyundai-solaris.png    171w,
+                images/offers/hyundai-solaris-x2.png 256w
+              "
+              sizes="(max-width:1024px) 171px, 256px"
+              alt="Ваш автомобиль"
+            />
           </div>
         </div>
         <div class="offer-wrapper">
@@ -128,6 +136,11 @@
             </p>
             <img
               src="images/offers/solaris_taxi.png"
+              srcset="
+                images/offers/solaris_taxi.png    151w,
+                images/offers/solaris_taxi-x2.png 256w
+              "
+              sizes="(max-width:1024px) 151px, 256px"
               alt="Ваш автомобиль такси"
             />
           </div>
@@ -138,7 +151,15 @@
             <p>
               Получайте деньги от аренды вашего автомобиля регулярно.
             </p>
-            <img src="images/offers/cash-money.png" alt="Деньги" />
+            <img
+              src="images/offers/cash-money.png"
+              srcset="
+                images/offers/cash-money.png    112w,
+                images/offers/cash-money-x2.png 256w
+              "
+              sizes="(max-width:1024px) 112px, 256px"
+              alt="Деньги"
+            />
           </div>
         </div>
       </div>
@@ -183,6 +204,7 @@
         />
       </div>
     </div>
+
     <div id="callback-form">
       <h1>Закажите обратный звонок!</h1>
       <div>
@@ -222,7 +244,7 @@
             Lorem ipsum dolor sit amet, Первый Таксопарк это очень круто,
             быстрые выплаты, зарегистрировался за 2 минуты онлайн, работаю уже 2
             года очень советую. Lorem ipsum dolor sit amet, Первый Таксопарк это
-            очень круто, быстрые выплаты,
+            очень круто, быстрые выплаты.
           </p>
         </div>
         <div class="review">
@@ -582,9 +604,25 @@ main {
       }
     }
   }
-  #promos,
-  #offer-1 {
+
+  #promos {
     grid-template-columns: repeat(3, 1fr);
+  }
+
+  #offer-1 {
+    grid-template-columns: 1fr;
+    margin: 15px auto !important;
+    width: 45%;
+    grid-template-rows: repeat(3, 1fr);
+    div {
+      &:nth-child(1),
+      &:nth-child(3) {
+        justify-self: flex-start;
+      }
+      &:nth-child(2) {
+        justify-self: flex-end;
+      }
+    }
   }
   #offer-2 {
     width: 50%;

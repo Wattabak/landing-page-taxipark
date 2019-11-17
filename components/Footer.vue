@@ -25,7 +25,9 @@
           <div class="interactive-contacts text-group">
             <h2>Мы в мессенджерах</h2>
             <div class="text-group">
-              <img src="icons/whatsapp-button.svg" alt="Whatsapp" />
+              <a href="https://wa.me/89779759012>" target="_blank">
+                <img src="icons/whatsapp-button.svg" alt="Whatsapp" />
+              </a>
               <img src="icons/telegram-button.svg" alt="Telegram" />
               <img src="icons/messenger-button.svg" alt="Messenger" />
             </div>
@@ -54,6 +56,12 @@
               <img src="icons/marker.svg" alt="" />
               <span>Санкт-Петербург</span>
             </div>
+          </div>
+          <div class="icon-text">
+            <img src="icons/youtube.svg" alt="" />
+            <a href="https://www.youtube.com/channel/UCQMsE8OwjpynLt7wPCl4b7g"
+              >Наш канал на youtube</a
+            >
           </div>
         </div>
       </div>
@@ -112,6 +120,14 @@ export default {
       align-items: center;
       justify-content: flex-start;
       margin-bottom: 5px;
+      a {
+        color: #fff;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 10px;
+        line-height: 12px;
+      }
       img {
         margin-right: 10px;
       }
@@ -128,6 +144,7 @@ export default {
 .yellow-callback {
   text-decoration: none;
 }
+
 div.container {
   padding: 15px;
   width: 100%;
@@ -148,6 +165,28 @@ div.container {
       font-weight: 300;
       font-size: 6.7947px;
       line-height: 8px;
+    }
+  }
+}
+@media (min-width: 1024px) {
+  #contact-us {
+    a,
+    h2,
+    span {
+      margin-bottom: 7px !important;
+    }
+    .yellow-callback {
+      font-size: 14px;
+    }
+  }
+  .icon-text {
+    span {
+      font-size: 14px !important;
+    }
+  }
+  .container {
+    li {
+      font-size: 10px !important;
     }
   }
 }
