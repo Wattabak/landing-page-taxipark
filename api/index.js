@@ -5,6 +5,11 @@ const fileupload = require('express-fileupload')
 
 const app = express()
 
+const secrets = {
+  user: '',
+  pass: ''
+}
+
 app.use(express.json())
 app.use(fileupload())
 
@@ -17,8 +22,8 @@ app.post('/form-submission', (req, res) => {
       host: 'smtp.yandex.ru',
       secure: false,
       auth: {
-        user: ***REMOVED***
-        pass: '***REMOVED***'
+        user: ServiceWorkerRegistration.user,
+        pass: ServiceWorkerRegistration.pass
       }
     })
 
