@@ -45,6 +45,8 @@ export default {
 * {
   font-family: 'Roboto', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
     'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
 }
 
 html {
@@ -96,10 +98,36 @@ h1 {
   text-align: center;
   color: #172116;
   margin-bottom: 5px;
+  border: 3px solid #fff500;
+  transition: all 0.2s ease-in;
+  &:hover {
+    background: rgb(34, 46, 32);
+    color: #fff500;
+  }
 
   img {
     width: 9px;
     height: 6px;
+  }
+}
+
+@media (min-width: 1024px) {
+  h1 {
+    font-size: 21px !important;
+  }
+  h2 {
+    font-size: 18px !important;
+  }
+  p,
+  label {
+    font-size: 16px !important;
+  }
+  input::placeholder {
+    font-size: 15px;
+  }
+  form span {
+    font-size: 10px;
+    line-height: 12px;
   }
 }
 </style>

@@ -8,12 +8,19 @@
         </label>
         <input
           id="name"
-          v-model.trim="formdata.name"
+          v-model.trim="$v.formdata.name.$model"
           type="text"
-          name="phone"
+          name="name"
           placeholder="Иванов Иван"
-          requried
+          required
         />
+        <span v-if="!$v.formdata.name.required" class="error">
+          Пожалуйста, введите ваше Имя!
+        </span>
+        <span v-if="!$v.formdata.name.minLength" class="error">
+          Имя должно содержать до
+          {{ $v.formdata.name.$params.minLength.min }} знаков.
+        </span>
       </div>
       <div class="field">
         <label>
@@ -27,6 +34,13 @@
           pattern="+[0-9]{1} ([0-9]{3}) [0-9]{3}-[0-9]{2}-[0-9]{2}"
           required
         />
+        <span v-if="!$v.formdata.phone.required" class="error">
+          Пожалуйста, введите ваш номер телефона!
+        </span>
+        <span v-if="!$v.formdata.phone.minLength" class="error">
+          Номер телефона не может содержать меньше
+          {{ $v.formdata.name.$params.minLength.min }} знаков.
+        </span>
       </div>
       <div class="field">
         <label>
@@ -38,6 +52,9 @@
           name="mail"
           placeholder="e-mail@yandex.ru"
         />
+        <span v-if="!$v.formdata.email.email" class="error">
+          Введите существующий адрес электронной почты!
+        </span>
       </div>
       <div class="checkbox">
         <input
@@ -50,6 +67,9 @@
         <label for="acceptOpherta">
           Подтвердить соглашение <a>оферты</a>
         </label>
+        <span v-if="!$v.acceptOpherta.required" class="error">
+          Пожалуйста, прочитайте и примите соглашение оферты
+        </span>
       </div>
       <div class="checkbox">
         <input
@@ -68,8 +88,16 @@
         обработку персональных данных и соглашаетесь c
         <a>Политикой конфиденциальности</a>
       </span>
+      <transition name="fade">
+        <div v-if="status == 'success'" class="success">
+          <img src="icons/checkmark.svg" alt="Успех" width="32px" />
+          <span>Ваш запрос на регистрацию был успешно отправлен!</span>
+          <span>Наши сотрудники свяжутся с Вами в ближайшее время.</span>
+        </div>
+      </transition>
       <button class="yellow-callback" @click.prevent="nextStep">
-        Регистрация
+        <span v-if="status == 'pending'">Отправка...</span>
+        <span v-else>Регистрация</span>
       </button>
     </section>
     <section v-if="currentStep == 2">
@@ -95,76 +123,129 @@
       <span>*Загрузите 4 изображения. Подойдут форматы .jpg и .png</span>
       <h3>Загруженные файлы:</h3>
       <div class="uploaded-files">
-        <img v-for="url of loadedPhotos" :key="url" :src="url" alt="preview" />
+        <img
+          v-for="photo of formdata.loadedPhotos"
+          :key="photo.url"
+          :src="photo.url"
+          alt="preview"
+        />
       </div>
-      <button class="yellow-callback">
-        Отправить
+
+      <button class="yellow-callback" @click.prevent="validateAndSend">
+        <span v-if="status == 'pending'">Отправка...</span>
+        <span v-else>
+          Отправить
+        </span>
       </button>
     </section>
   </form>
 </template>
 
 <script>
-import { required, email } from 'vuelidate/lib/validators'
+import axios from 'axios'
+
+import { required, email, maxLength, minLength } from 'vuelidate/lib/validators'
 
 export default {
   data() {
     return {
       errors: [],
       formdata: {
-        apiUrl: 'localhost:3001/form-submission',
+        formType: 'registration',
         name: '',
         phone: '',
         email: '',
-        loadedPhotos: {}
+        loadedPhotos: []
       },
       acceptOpherta: false,
       loadPhotos: false,
-      loadedPhotos: [],
       currentStep: 1,
       status: ''
     }
   },
   validations: {
-    name: {
-      required
-    },
-    phone: {
-      required
-    },
-    email: {
-      required,
-      email
+    formdata: {
+      name: {
+        required,
+        maxLength: maxLength(50),
+        minLength: minLength(5)
+      },
+      phone: {
+        required,
+        minLength: minLength(7)
+      },
+      email: {
+        email
+      }
     },
     acceptOpherta: {
       required
     }
   },
+  beforeMount() {
+    window.addEventListener('beforeunload', this.leaving)
+  },
   methods: {
-    onFileChange(e) {
-      console.log(this.loadedPhotos)
-      const files = e.target.files
-      for (const file of files) {
-        this.loadedPhotos.push(URL.createObjectURL(file))
-        console.log(URL.createObjectURL(file))
+    leaving: function leaving(event) {
+      alert('unload')
+      console.log('leaving')
+      if (this.currentStep === 2) {
+        this.submitForm()
       }
     },
     nextStep() {
-      if (this.loadPhotos && this.acceptOpherta) {
+      if (this.loadPhotos && !this.$v.$invalid) {
         this.currentStep += 1
-      } else if (this.acceptOpherta) {
-        this.sendForm()
+      } else if (!this.$v.$invalid && !this.loadPhotos) {
+        this.validateAndSend()
         console.log(this.form)
       } else {
-        this.status = 'not_Valid'
+        this.status = 'Invalid'
       }
     },
-    sendForm() {}
+    onFileChange(e) {
+      const files = e.target.files
+      for (const file of files) {
+        console.log(file)
+        this.formdata.loadedPhotos.push({
+          url: URL.createObjectURL(file),
+          filename: file.name,
+          content: file
+        })
+      }
+    },
+    validateAndSend() {
+      this.$v.$touch()
+      if (this.$v.$invalid) {
+        this.status = 'error'
+      } else {
+        // do your submit logic here
+        this.submitForm()
+      }
+    },
+    submitForm() {
+      axios
+        .post('api/form-submission', this.formdata)
+        .then(
+          ((this.status = 'success'),
+          setTimeout(() => {
+            this.status = ''
+          }, 3000))
+        )
+        .catch()
+    }
   }
 }
 </script>
 
 <style lang="scss" scoped>
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
 form {
   cursor: text;
   * {
@@ -173,6 +254,7 @@ form {
   }
   section {
     display: flex;
+    position: relative;
     flex-direction: column;
     align-items: flex-start;
     padding: 25px;
@@ -275,18 +357,30 @@ form {
   button {
     background: #2b6ff2;
     border-radius: 19px;
-    color: #fff;
-    font-family: Ubuntu;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 14px;
-    line-height: 16px;
-    text-align: center;
+    span {
+      color: #fff;
+      font-family: Ubuntu;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 16px;
+      text-align: center;
+      margin: 0;
+    }
     padding: 5px;
     align-self: center;
     min-width: 175px;
     width: 65%;
     cursor: pointer;
+    border: 3px solid transparent;
+    transition: all 0.2s ease-in;
+    &:hover {
+      background: white;
+      border: 3px solid #2b6ff2;
+      span {
+        color: black;
+      }
+    }
   }
   .uploaded-files {
     display: flex;
@@ -298,6 +392,31 @@ form {
     img {
       height: 96px;
       margin-right: 15px;
+    }
+  }
+  .error {
+    color: #ed2e2e;
+    font-size: 9px;
+    text-align: left;
+    align-self: flex-start;
+    margin-bottom: 0;
+  }
+  .success {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    border-radius: 22px;
+    padding: 10px;
+    margin: 0;
+    background: rgb(28, 199, 0);
+    bottom: 0;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+    span {
+      color: #fff;
+      font-size: 14px;
     }
   }
 }

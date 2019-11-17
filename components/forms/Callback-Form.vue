@@ -75,6 +75,7 @@ export default {
   // Assign a unique id to each component
   data: () => ({
     formData: {
+      formType: 'callback',
       name: '',
       phone: ''
     },
@@ -98,12 +99,19 @@ export default {
     onSubmit() {
       this.$v.$touch()
       if (this.$v.$invalid) {
-        this.submitStatus = 'error'
+        this.status = 'error'
       } else {
         // do your submit logic here
         axios
           .post('api/form-submission', this.formData)
-          .then((this.status = 'success'))
+          .then(
+            ((this.status = 'success'),
+            setTimeout(
+              setTimeout(() => {
+                this.status = ''
+              }, 3000)
+            ))
+          )
           .catch()
       }
     }
@@ -179,7 +187,7 @@ form {
     }
   }
   .error {
-    color: #ed2e2e;
+    color: #fff500;
     font-size: 9px;
   }
   .success {
@@ -202,7 +210,7 @@ form {
 .yellow-callback {
   left: 0px;
   padding: 5px 0;
-  bottom: -1px;
+  bottom: -5px;
   font-size: 14px;
   line-height: 16px;
   position: absolute;
