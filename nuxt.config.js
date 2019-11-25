@@ -23,6 +23,10 @@ export default {
         hid: 'description',
         name: 'description',
         content: process.env.npm_package_description || ''
+      },
+      {
+        name: 'yandex-verification',
+        content: 'a9dc6e636a61117b'
       }
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: 'favicon.ico' }]
@@ -38,7 +42,18 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [{ src: '~/plugins/Vuelidate' }, { src: '~/plugins/directives' }],
+  plugins: [
+    { src: '~/plugins/Vuelidate' },
+    { src: '~/plugins/directives' },
+    { src: '~/plugins/Vmodal' },
+    { src: '~/plugins/lazysizes' }
+  ],
+  // serverMiddleware: [
+  //   {
+  //     path: '/api',
+  //     handler: '~/api/index.js'
+  //   }
+  // ],
   /*
    ** Nuxt.js dev-modules
    */
@@ -46,16 +61,21 @@ export default {
     // Doc: https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module'
   ],
-  serverMiddleware: [
-    {
-      path: '/api',
-      handler: '~/api/index.js'
-    }
-  ],
   /*
    ** Nuxt.js modules
    */
   modules: [],
+  // modules: ['@nuxtjs/axios', '@nuxtjs/proxy'],
+  // axios: {
+  //   credentials: false,
+  //   proxy: true
+  // },
+  // proxy: {
+  //   '/api/form-submission': {
+  //     target:
+  //       'https://europe-west2-model-fastness-260110.cloudfunctions.net/form-submitco-1'
+  //   }
+  // },
   /*
    ** Build configuration
    */

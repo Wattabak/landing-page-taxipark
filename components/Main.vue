@@ -6,15 +6,23 @@
       <div class="content-in-overlay">
         <div class="text-advantages">
           <div>
-            <img src="icons/five-icon.svg" alt="icon" />
+            <img data-src="icons/five-icon.svg" class="lazyload" alt="icon" />
             <span>Регистрация за <span>5 минут</span></span>
           </div>
           <div>
-            <img src="icons/quick-money-icon.svg" alt="icon" />
+            <img
+              class="lazyload"
+              data-src="icons/quick-money-icon.svg"
+              alt="icon"
+            />
             <span>Мгновенные выплаты</span>
           </div>
           <div>
-            <img src="icons/time-is-money.svg" alt="icon" />
+            <img
+              class="lazyload"
+              data-src="icons/time-is-money.svg"
+              alt="icon"
+            />
             <span>Доход до 10 000 рублей в сутки</span>
           </div>
         </div>
@@ -29,20 +37,42 @@
       <ul>
         <div>
           <li>
-            <img src="images/partners/yandex-taxi.png" alt="Яндекс.Такси" />
+            <img
+              class="lazyload"
+              data-src="images/partners/yandex-taxi.png"
+              alt="Яндекс.Такси"
+            />
           </li>
-          <li><img src="images/partners/citimobil.png" alt="СитиМобил" /></li>
+          <li>
+            <img
+              class="lazyload"
+              data-src="images/partners/citimobil.png"
+              alt="СитиМобил"
+            />
+          </li>
         </div>
         <div>
-          <li><img src="images/partners/gett.png" alt="GetT" /></li>
-          <li><img src="images/partners/bolt.png" alt="Bolt" /></li>
+          <li>
+            <img
+              class="lazyload"
+              data-src="images/partners/gett.png"
+              alt="GetT"
+            />
+          </li>
+          <li>
+            <img
+              class="lazyload"
+              data-src="images/partners/bolt.png"
+              alt="Bolt"
+            />
+          </li>
         </div>
       </ul>
     </div>
     <div id="promos">
       <div>
         <div>
-          <img src="icons/ruble.svg" alt="" />
+          <img class="lazyload" data-src="icons/ruble.svg" alt="" />
           <h2>Зарабатывайте до 10 000 ₽/день</h2>
         </div>
         <p>
@@ -52,7 +82,7 @@
       </div>
       <div>
         <div>
-          <img src="icons/taxi-icon.svg" alt="" />
+          <img class="lazyload" data-src="icons/taxi-icon.svg" alt="" />
           <h2>Работаем с крупнейшими агрегаторами</h2>
         </div>
         <p>
@@ -62,18 +92,18 @@
       </div>
       <div>
         <div>
-          <img src="icons/percent.svg" alt="" />
+          <img class="lazyload" data-src="icons/percent.svg" alt="" />
           <h2>Множество акций и специальных предложений</h2>
         </div>
         <p>
-          В Первом Таксопарке предоставит Вам лучшие предложения заработка.
+          В Первом Таксопарке мы предоставим Вам лучшие предложения заработка.
           Ознакомиться с несколькими из наших специальных предложений Вы можете
           ниже.
         </p>
       </div>
       <div>
         <div>
-          <img src="icons/momentary-payouts.svg" alt="" />
+          <img class="lazyload" data-src="icons/momentary-payouts.svg" alt="" />
           <h2>Выводите средства мгновенно</h2>
         </div>
         <p>
@@ -83,7 +113,7 @@
       </div>
       <div>
         <div>
-          <img src="icons/yandex-gasstation.png" alt="" />
+          <img class="lazyload" data-src="icons/yandex-gasstation.png" alt="" />
           <h2>Используйте Яндекс.Заправки</h2>
         </div>
         <p>
@@ -93,7 +123,7 @@
       </div>
       <div>
         <div>
-          <img src="icons/moscow_icon.svg" alt="" />
+          <img class="lazyload" data-src="icons/moscow_icon.svg" alt="" />
           <h2>Работаем в крупнейших городах России</h2>
         </div>
         <p>Первый Таксопарк работает на территории Москвы и Санкт-Петербурга</p>
@@ -110,14 +140,19 @@
       <h2>Сдайте ваш автомобиль в аренду и получайте пассивный заработок</h2>
       <div id="offer-1">
         <div class="offer-wrapper">
-          <img src="images/offers/1.svg" alt="Первый шаг" />
+          <img
+            class="lazyload"
+            data-src="images/offers/1.svg"
+            alt="Первый шаг"
+          />
           <div>
             <p>
               Простаивает хороший автомобиль? Ищете источник пассивного
               заработка?
             </p>
             <img
-              src="images/offers/hyundai-solaris.png"
+              class="lazyload"
+              data-src="images/offers/hyundai-solaris.png"
               srcset="
                 images/offers/hyundai-solaris.png    171w,
                 images/offers/hyundai-solaris-x2.png 256w
@@ -128,14 +163,19 @@
           </div>
         </div>
         <div class="offer-wrapper">
-          <img src="images/offers/2.svg" alt="Второй шаг" />
+          <img
+            class="lazyload"
+            data-src="images/offers/2.svg"
+            alt="Второй шаг"
+          />
           <div>
             <p>
               Сдайте ваш автомобиль в аренду в Первый Таксопарк, мы подберем
               водителя.
             </p>
             <img
-              src="images/offers/solaris_taxi.png"
+              class="lazyload"
+              data-src="images/offers/solaris_taxi.png"
               srcset="
                 images/offers/solaris_taxi.png    151w,
                 images/offers/solaris_taxi-x2.png 256w
@@ -146,13 +186,18 @@
           </div>
         </div>
         <div class="offer-wrapper">
-          <img src="images/offers/3.svg" alt="Третий шаг" />
+          <img
+            class="lazyload"
+            data-src="images/offers/3.svg"
+            alt="Третий шаг"
+          />
           <div>
             <p>
               Получайте деньги от аренды вашего автомобиля регулярно.
             </p>
             <img
-              src="images/offers/cash-money.png"
+              class="lazyload"
+              data-src="images/offers/cash-money.png"
               srcset="
                 images/offers/cash-money.png    112w,
                 images/offers/cash-money-x2.png 256w
@@ -170,36 +215,49 @@
       <div id="offer-2">
         <div>
           <div class="driver-income">
-            <img src="images/offers/taxi-driver-1.png" alt="Водитель" />
+            <img
+              class="lazyload"
+              data-src="images/offers/taxi-driver-1.png"
+              alt="Водитель"
+            />
             <p>Зарабатывает до <span>5000</span> ₽/день</p>
           </div>
           <div>
-            <img src="" alt="" />
+            <img class="lazyload" data-src="" alt="" />
             <span>1%=<span>50</span> ₽/день</span>
           </div>
         </div>
         <div>
           <div class="driver-income">
-            <img src="images/offers/taxi-driver-1.png" alt="Водитель" />
+            <img
+              class="lazyload"
+              data-src="images/offers/taxi-driver-1.png"
+              alt="Водитель"
+            />
             <p>Зарабатывает до <span>4000</span> ₽/день</p>
           </div>
           <div>
-            <img src="" alt="" />
+            <img class="lazyload" data-src="" alt="" />
             <span>1%=<span>40</span> ₽/день</span>
           </div>
         </div>
         <div>
           <div class="driver-income">
-            <img src="images/offers/taxi-driver-1.png" alt="Водитель" />
+            <img
+              class="lazyload"
+              data-src="images/offers/taxi-driver-1.png"
+              alt="Водитель"
+            />
             <p>Зарабатывает до <span>7000</span> ₽/день</p>
           </div>
           <div>
-            <img src="" alt="" />
+            <img class="lazyload" data-src="" alt="" />
             <span>1%=<span>70</span> ₽/день</span>
           </div>
         </div>
         <img
-          src="images/offers/man-showing-amount.png"
+          class="lazyload"
+          data-src="images/offers/man-showing-amount.png"
           alt="Сколько можно заработать"
         />
       </div>
@@ -209,11 +267,11 @@
       <h1>Закажите обратный звонок!</h1>
       <div>
         <div class="promo">
-          <img src="images/consultant-icon.png" alt="" />
+          <img class="lazyload" data-src="images/consultant-icon.png" alt="" />
           <p>
             Получите <span>бесплатную</span> консультацию от менеджера Первого
-            Таксопарка. Наши сотрудники помогут оформить необходимые документы и
-            начать зарабатывать за <span>5 минут!</span>
+            Таксопарка. Наши сотрудники помогут оперативно оформить необходимые
+            документы, и через <span>5 минут!</span> Вы начнёте зарабатывать!
           </p>
         </div>
 
@@ -226,7 +284,11 @@
       <h1>Отзывы наших водителей</h1>
       <div class="reviews">
         <div class="review">
-          <img src="images/driver-picture.png" alt="Фотография Водителя" />
+          <img
+            class="lazyload"
+            data-src="images/driver-picture.png"
+            alt="Фотография Водителя"
+          />
 
           <h3>Алексей. В Таксопарке уже 2 года</h3>
           <p>
@@ -237,7 +299,11 @@
           </p>
         </div>
         <div class="review">
-          <img src="images/driver-picture.png" alt="Фотография Водителя" />
+          <img
+            class="lazyload"
+            data-src="images/driver-picture.png"
+            alt="Фотография Водителя"
+          />
 
           <h3>Алексей. В Таксопарке уже 2 года</h3>
           <p>
@@ -248,7 +314,11 @@
           </p>
         </div>
         <div class="review">
-          <img src="images/driver-picture.png" alt="Фотография Водителя" />
+          <img
+            class="lazyload"
+            data-src="images/driver-picture.png"
+            alt="Фотография Водителя"
+          />
 
           <h3>Алексей. В Таксопарке уже 2 года</h3>
           <p>
@@ -297,7 +367,7 @@ main {
     width: 100%;
   }
   .first-picture-background-image {
-    background-image: url('/images/taxi-driver-background-blur.jpg');
+    background-image: url('/images/Smiling-Taxi-driver-Stock-Photo-blur-smaller.jpg');
     background-size: cover;
     width: 100%;
     height: 100%;
