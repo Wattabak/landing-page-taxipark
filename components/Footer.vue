@@ -9,14 +9,24 @@
             <div class="text-group">
               <h2>Наш телефон</h2>
               <div class="icon-text">
-                <img src="icons/phone-icon-white.svg" alt="icon" />
+                <img
+                  class="lazyload"
+                  data-class="lazyload"
+                  data-src="icons/phone-icon-white.svg"
+                  alt="icon"
+                />
                 <span>+7 (977) 975-90-12</span>
               </div>
             </div>
             <div class="text-group">
               <h2>Наш e-mail</h2>
               <div class="icon-text">
-                <img src="icons/email-icon-white.svg" alt="" />
+                <img
+                  class="lazyload"
+                  data-class="lazyload"
+                  data-src="icons/email-icon-white.svg"
+                  alt=""
+                />
                 <span>info@первыйтаксопарк.рф</span>
               </div>
             </div>
@@ -26,39 +36,54 @@
             <h2>Мы в мессенджерах</h2>
             <div class="text-group">
               <a href="https://wa.me/89779759012" target="_blank">
-                <img src="icons/whatsapp-button.svg" alt="Whatsapp" />
+                <img
+                  class="lazyload"
+                  data-class="lazyload"
+                  data-src="icons/whatsapp-button.svg"
+                  alt="Whatsapp"
+                />
               </a>
-              <img src="icons/telegram-button.svg" alt="Telegram" />
-              <img src="icons/messenger-button.svg" alt="Messenger" />
+              <a href="tg://resolve?domain=Onetaxopark" target="_blank">
+                <img
+                  class="lazyload"
+                  data-src="icons/telegram-button.svg"
+                  alt="Telegram"
+                />
+              </a>
+              <img
+                class="lazyload"
+                data-src="icons/messenger-button.svg"
+                alt="Messenger"
+              />
             </div>
           </div>
         </div>
         <div>
           <div class="interactive-buttons">
             <a href="/#callback-form" class="yellow-callback">
-              <img src="/icons/checkers.svg" alt="" />
+              <img class="lazyload" data-src="/icons/checkers.svg" alt="" />
               Заказать обратный звонок
-              <img src="/icons/checkers.svg" alt="" />
+              <img class="lazyload" data-src="/icons/checkers.svg" alt="" />
             </a>
             <a href="/#registration-form" class="yellow-callback">
-              <img src="/icons/checkers.svg" alt="" />
+              <img class="lazyload" data-src="/icons/checkers.svg" alt="" />
               Оформиться в такоспарке
-              <img src="/icons/checkers.svg" alt="" />
+              <img class="lazyload" data-src="/icons/checkers.svg" alt="" />
             </a>
           </div>
           <div class="adresses text-group">
             <h2>Города, в которых мы работаем:</h2>
             <div class="icon-text">
-              <img src="icons/marker.svg" alt="" />
+              <img class="lazyload" data-src="icons/marker.svg" alt="" />
               <span>Москва</span>
             </div>
             <div class="icon-text">
-              <img src="icons/marker.svg" alt="" />
+              <img class="lazyload" data-src="icons/marker.svg" alt="" />
               <span>Санкт-Петербург</span>
             </div>
           </div>
           <div class="icon-text">
-            <img src="icons/youtube.svg" alt="" />
+            <img class="lazyload" data-src="icons/youtube.svg" alt="" />
             <a href="https://www.youtube.com/channel/UCQMsE8OwjpynLt7wPCl4b7g"
               >Наш канал на youtube</a
             >

@@ -6,8 +6,11 @@
   </div>
 </template>
 <script>
+import lazySizes from 'lazysizes'
 import Header from '~/components/Header.vue'
 import Footer from '~/components/Footer.vue'
+
+lazySizes.init()
 
 export default {
   head: {
@@ -77,6 +80,28 @@ h1 {
   text-align: center;
   padding: 20px 15px;
 }
+.button-normal {
+  cursor: pointer;
+  background: #2b6ff2;
+  border: none;
+  color: #fff;
+  padding: 5px;
+  border: 3px solid transparent;
+  box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 20.0739px;
+  font-family: Ubuntu;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 10.1399px;
+  line-height: 12px;
+  text-align: center;
+  transition: all 0.2s ease-in;
+  &:hover {
+    background: #fff;
+    color: #000;
+    border: 3px solid #2b6ff2;
+  }
+}
 
 .yellow-callback {
   cursor: pointer;
@@ -108,6 +133,29 @@ h1 {
   img {
     width: 9px;
     height: 6px;
+  }
+}
+
+@keyframes shakeError {
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%,
+  60% {
+    transform: translate3d(4px, 0, 0);
   }
 }
 

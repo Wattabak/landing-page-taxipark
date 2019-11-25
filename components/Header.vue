@@ -2,12 +2,17 @@
   <header>
     <nav class="head-class">
       <img
-        src="icons/menu-button.svg"
-        class="open_menu-mobile"
+        data-src="icons/menu-button.svg"
+        class="lazyload open_menu-mobile"
         @click="toggleMenuShown"
       />
       <a href="/#initial-screen" class="main-logo">
-        <img src="logo_final_with_text.png" alt="Логотип" srcset="" />
+        <img
+          class="lazyload"
+          data-src="logo_final_with_text.png"
+          alt="Логотип"
+          srcset=""
+        />
       </a>
       <ul :class="{ shown: menuVisibleMobile }">
         <li><a href="#partners-bar">Партнеры</a></li>
@@ -17,19 +22,35 @@
       </ul>
       <div class="contact-data">
         <div class="phone-text">
-          <img src="icons/phone-icon.svg" alt="phone-icon" />
+          <img
+            class="lazyload"
+            data-src="icons/phone-icon.svg"
+            alt="phone-icon"
+          />
           <span>+7 (977) 975-90-12</span>
         </div>
         <div class="chat-with-us-block">
           <div style="margin-right:10px">
             <a href="https://wa.me/89779759012" target="_blank">
-              <img src="icons/whatsapp.svg" alt="Whatsapp logo" />
+              <img
+                class="lazyload"
+                data-src="icons/whatsapp.svg"
+                alt="Whatsapp logo"
+              />
             </a>
-            <a href="tg://resolve?domain=<USERNAME>" target="_blank">
-              <img src="icons/telegram.svg" alt="Telegram logo" />
+            <a href="tg://resolve?domain=Onetaxopark" target="_blank">
+              <img
+                class="lazyload"
+                data-src="icons/telegram.svg"
+                alt="Telegram logo"
+              />
             </a>
             <a href="http://m.me/USERNAME" target="_blank">
-              <img src="icons/messenger.svg" alt="Messenger logo" />
+              <img
+                class="lazyload"
+                data-src="icons/messenger.svg"
+                alt="Messenger logo"
+              />
             </a>
           </div>
           <span style="text-decoration:underline;font-weight:400;">
