@@ -330,17 +330,23 @@
         </div>
       </div>
     </div>
+    <confidentiality-aggreement />
+    <opherta-aggreement />
   </main>
 </template>
 
 <script>
 import CallbackForm from './forms/Callback-Form.vue'
 import RegistrationForm from './forms/Registration-Form.vue'
+import ConfidentialityAggreement from './ConfidentialityAggreement'
+import OphertaAggreement from './OphertaAggreement'
 
 export default {
   components: {
     CallbackForm,
-    RegistrationForm
+    RegistrationForm,
+    ConfidentialityAggreement,
+    OphertaAggreement
   },
   data() {
     return {
@@ -355,6 +361,9 @@ export default {
 <style lang="scss" scoped>
 main {
   width: 100%;
+}
+.v--modal-overlay {
+  background: rgba(0, 0, 0, 0.5);
 }
 #initial-screen {
   position: relative;

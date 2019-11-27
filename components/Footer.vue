@@ -95,7 +95,9 @@
     </div>
     <div class="container">
       <ul>
-        <li>Политика конфиденциальности</li>
+        <li @click.prevent="$modal.show('confidentiality')">
+          Политика конфиденциальности
+        </li>
         <li @click="scrollToTop">Наверх</li>
         <li>© Первый Таксопарк 2019</li>
       </ul>
