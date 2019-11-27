@@ -31,7 +31,7 @@
         </div>
         <div class="chat-with-us-block">
           <div style="margin-right:10px">
-            <a href="https://wa.me/89779759012" target="_blank">
+            <a href="https://wa.me/79779759012" target="_blank">
               <img
                 class="lazyload"
                 data-src="icons/whatsapp.svg"
@@ -45,12 +45,8 @@
                 alt="Telegram logo"
               />
             </a>
-            <a href="http://m.me/USERNAME" target="_blank">
-              <img
-                class="lazyload"
-                data-src="icons/messenger.svg"
-                alt="Messenger logo"
-              />
+            <a href="viber://add?number=%2B79779759012" target="_blank">
+              <img class="lazyload" data-src="icons/viber.svg" alt="Viber" />
             </a>
           </div>
           <span style="text-decoration:underline;font-weight:400;">
