@@ -35,7 +35,7 @@
           <div class="interactive-contacts text-group">
             <h2>Мы в мессенджерах</h2>
             <div class="text-group">
-              <a href="https://wa.me/89779759012" target="_blank">
+              <a href="https://wa.me/79779759012" target="_blank">
                 <img
                   class="lazyload"
                   data-class="lazyload"
@@ -50,11 +50,13 @@
                   alt="Telegram"
                 />
               </a>
-              <img
-                class="lazyload"
-                data-src="icons/messenger-button.svg"
-                alt="Messenger"
-              />
+              <a href="viber://add?number=%2B79779759012" target="_blank">
+                <img
+                  class="lazyload"
+                  data-src="icons/viber-button.svg"
+                  alt="Viber"
+                />
+              </a>
             </div>
           </div>
         </div>
