@@ -609,7 +609,7 @@ main {
     padding: 15px 29px;
     background: #fbf8c3;
     border-radius: 0px 0px 15px 15px;
-    max-width: 450px;
+    max-width: 313px;
     img {
       position: absolute;
       top: -32px;
@@ -632,7 +632,7 @@ main {
       font-size: 14px;
       line-height: 16px;
 
-      text-align: justify;
+      text-align: left;
     }
   }
 }
