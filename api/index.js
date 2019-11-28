@@ -7,8 +7,8 @@ const fileupload = require('express-fileupload')
 const app = express()
 
 const secrets = {
-  user: ***REMOVED***
-  pass: '***REMOVED***'
+  user: '',
+  pass: ''
 }
 
 // app.use(express.json())
@@ -37,8 +37,8 @@ app.post('/form-submission', (req, res) => {
     }
 
     const mailOptions = {
-      from: 'Первый Таксопарк <***REMOVED***>',
-      to: ***REMOVED***,
+      from: 'Первый Таксопарк <agoner1@yandex.ru>',
+      to: 'vl.tab.kov@gmail.com',
       subject: 'Новый запрос на обратный звонок',
       text: `Имя - ${name}, Телефон - ${phone}`,
       html: `
