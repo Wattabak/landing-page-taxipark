@@ -7,8 +7,8 @@ const fileupload = require('express-fileupload')
 const app = express()
 
 const secrets = {
-  user: 'agoner1@yandex.ru',
-  pass: 'reP2qv)!OZWS2wlkqvs5?'
+  user: '',
+  pass: ''
 }
 
 // app.use(express.json())
