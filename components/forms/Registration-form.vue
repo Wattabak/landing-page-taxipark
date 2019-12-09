@@ -66,12 +66,12 @@
         </span>
       </div>
       <div
-        :class="{ 'inputGroup-error': $v.acceptOpherta.$error }"
+        :class="{ 'inputGroup-error': $v.formdata.acceptOpherta.$error }"
         class="checkbox"
       >
         <input
           id="acceptOpherta"
-          v-model.trim="acceptOpherta"
+          v-model.trim="formdata.acceptOpherta"
           type="checkbox"
           name="acceptOpherta"
           required
@@ -82,7 +82,7 @@
         </label>
       </div>
       <span
-        v-if="!$v.acceptOpherta.required"
+        v-if="!$v.formdata.acceptOpherta.required"
         class="error"
         style="margin-top: -5px;"
       >
@@ -136,10 +136,12 @@
         документов:
       </h3>
       <ol>
-        <li>Паспорт, основная страница (стр. 5)</li>
-        <li>Паспорт, прописка (стр. 6)</li>
-        <li>СТС</li>
-        <li>ВУ, если ваш стаж больше 3 лет</li>
+        <li>Паспорт, основная страница (стр. 5) (1 фотография);</li>
+        <li>Паспорт, прописка (стр. 6) (1 фотография);</li>
+        <li>СТС, c 2 сторон (2 фотографии);</li>
+        <li>ВУ, если ваш стаж больше 3 лет, c 2 сторон (2 фотографии);</li>
+        <li>Ваша фотография (подойдет селфи) (1 фотография);</li>
+        <li>Страховка (1 фотография).</li>
       </ol>
       <input
         id="fileLoader"
@@ -149,7 +151,7 @@
         multiple
         @change="onFileChange"
       />
-      <span>*Загрузите 4 изображения. Подойдут форматы .jpg и .png</span>
+      <span>*Загрузите 8 изображений. Подойдут форматы .jpg и .png</span>
       <h3>Загруженные файлы:</h3>
       <div class="uploaded-files">
         <div
@@ -211,9 +213,9 @@ export default {
         name: '',
         phone: '',
         email: '',
+        acceptOpherta: false,
         loadedPhotos: []
       },
-      acceptOpherta: false,
       loadPhotos: false,
       currentStep: 1,
       status: ''
@@ -232,10 +234,10 @@ export default {
       },
       email: {
         email
+      },
+      acceptOpherta: {
+        required: sameAs(() => true)
       }
-    },
-    acceptOpherta: {
-      required: sameAs(() => true)
     }
   },
   beforeMount() {
@@ -462,6 +464,9 @@ form {
     text-align: left;
     padding: 15px;
     justify-content: center;
+    li {
+      line-height: 23px;
+    }
   }
 
   button {

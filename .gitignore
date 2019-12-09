@@ -90,3 +90,7 @@ sw.*
 *.swp
 
 secrets.js
+
+key.txt
+
+package-lock.json

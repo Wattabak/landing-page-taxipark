@@ -45,9 +45,9 @@
                 alt="Telegram logo"
               />
             </a>
-            <a href="viber://add?number=%2B79779759012" target="_blank">
+            <!-- <a href="viber://add?number=%2B79779759012" target="_blank">
               <img class="lazyload" data-src="icons/viber.svg" alt="Viber" />
-            </a>
+            </a> -->
           </div>
           <span style="text-decoration:underline;font-weight:400;">
             Пишите нам
