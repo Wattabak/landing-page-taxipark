@@ -20,7 +20,7 @@
     "axios": "^0.19.0",
     "express-fileupload": "^1.1.6-alpha.6",
     "lazysizes": "^5.2.0-beta1",
-    "nodemailer": "^6.3.1",
+    "nodemailer": "^6.4.16",
     "nuxt": "^2.0.0",
     "sendmail": "^1.6.1",
     "validator": "^12.0.0",
